@@ -1,7 +1,7 @@
 import os
 import csv
 
-#Variable (list) to store the results, length will be used to determine the number of months
+#Variable (list) to store the results
 months = []
 net_total = []
 profit_change = []
@@ -16,12 +16,11 @@ with open(csv_path, "r") as csvfile:
     #Skips the header
     next (csvreader)
 
+#Loop through each row
     for row in csvreader:
-    #build a list of all of the months
         months.append(row[0])
         net_total.append(int(row[1]))
 
-    
  
 #Calculate number of months by finding the length of the months list
 total_month = (len(months))
@@ -33,7 +32,7 @@ total_net = sum(net_total)
 for x in range(len(net_total)-1):
         profit_change.append(net_total[x+1] - net_total[x])
 
-#Average change in profit/loss: total profit/loss divided by the number of months
+#Average change in profit/loss
 average_change = sum(profit_change) / len(profit_change)
 
 #Greatest increase in profits (date and amount) over entire period
