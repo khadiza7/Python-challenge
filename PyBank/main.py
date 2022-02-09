@@ -1,7 +1,7 @@
 import os
 import csv
 
-#Variable (list) to store the results
+#Variable to store the results
 months = []
 net_total = []
 profit_change = []
@@ -13,10 +13,10 @@ csv_path = os.path.join('budget_data.csv')
 with open(csv_path, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     
-    #Skips the header
-    next (csvreader)
+    #Stores the header
+    csv_header = next (csvreader)
 
-#Loop through each row
+#Loop through each row, add each month and each profit/loss to their respective lists.
     for row in csvreader:
         months.append(row[0])
         net_total.append(int(row[1]))
