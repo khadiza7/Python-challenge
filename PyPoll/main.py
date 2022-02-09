@@ -58,8 +58,8 @@ with open(election_path, "r") as csvfile:
         if value == maxvotes:
             winner = key
 
-#Merging dictionaries to add vote count to name and vote percentage
-for a, b in vote_percentage.items():
+    #Merging dictionaries to add vote count to name and vote percentage
+    for a, b in vote_percentage.items():
         if a in votes_for_candidates.keys():
             votes_for_candidates[a] = [b,votes_for_candidates[a]]
 
